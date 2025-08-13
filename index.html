@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UB Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="custom-titlebar">
+            <div class="titlebar-drag-region">
+                <img src="assets/icon.png" alt="UB Calculator" class="app-icon">
+                <span class="app-title">UB Calculator</span>
+            </div>
+            <div class="window-controls">
+                <button class="window-control minimize-btn" id="minimize-btn" title="Minimize">
+                    <svg width="12" height="12" viewBox="0 0 12 12">
+                        <rect x="2" y="5" width="8" height="2" fill="currentColor"/>
+                    </svg>
+                </button>
+                <button class="window-control close-btn" id="close-btn" title="Close">
+                    <svg width="12" height="12" viewBox="0 0 12 12">
+                        <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="header">
+            <div class="calculator-title">
+                <h1>Calculator</h1>
+            </div>
+            <div class="mode-controls">
+                <button id="mode-btn" class="mode-button">Scientific</button>
+                <button id="history-btn" class="mode-button history-button">History</button>
+            </div>
+        </div>
+        
+        <div class="display-container">
+            <div class="history" id="history"></div>
+            <div class="display" id="display">0</div>
+        </div>
+
+        <div class="memory-display" id="memory-display">
+            <span id="memory-indicator"></span>
+        </div>
+
+        <div class="calculator-body" id="calculator-body">
+            <!-- History panel (integrated into layout) -->
+            <div class="history-panel" id="history-panel">
+                <div class="history-header">
+                    <h3>History</h3>
+                    <div class="history-controls">
+                        <button id="clear-history" class="clear-history-btn">Clear</button>
+                        <button id="close-history" class="close-history-btn">✕</button>
+                    </div>
+                </div>
+                <div class="history-list" id="history-list">
+                    <!-- History items will be added here dynamically -->
+                </div>
+            </div>
+
+            <!-- Scientific functions (hidden by default) -->
+            <div class="scientific-panel" id="scientific-panel">
+                <div class="button-row">
+                    <button class="btn function" data-function="sin">sin</button>
+                    <button class="btn function" data-function="cos">cos</button>
+                    <button class="btn function" data-function="tan">tan</button>
+                    <button class="btn function" data-function="log">log</button>
+                    <button class="btn function" data-function="ln">ln</button>
+                </div>
+                <div class="button-row">
+                    <button class="btn function" data-function="asin">asin</button>
+                    <button class="btn function" data-function="acos">acos</button>
+                    <button class="btn function" data-function="atan">atan</button>
+                    <button class="btn function" data-function="pow">x^y</button>
+                    <button class="btn function" data-function="sqrt">√</button>
+                </div>
+                <div class="button-row">
+                    <button class="btn function" data-function="pi">π</button>
+                    <button class="btn function" data-function="e">e</button>
+                    <button class="btn function" data-function="factorial">x!</button>
+                    <button class="btn function" data-function="exp">exp</button>
+                    <button class="btn function" data-function="abs">|x|</button>
+                </div>
+            </div>
+
+            <!-- Main calculator buttons -->
+            <div class="main-panel">
+                <!-- Memory operations -->
+                <div class="button-row">
+                    <button class="btn memory" data-memory="mc">MC</button>
+                    <button class="btn memory" data-memory="mr">MR</button>
+                    <button class="btn memory" data-memory="ms">MS</button>
+                    <button class="btn memory" data-memory="mplus">M+</button>
+                    <button class="btn memory" data-memory="mminus">M-</button>
+                </div>
+
+                <!-- First row -->
+                <div class="button-row">
+                    <button class="btn clear" data-action="clear">C</button>
+                    <button class="btn clear" data-action="ce">CE</button>
+                    <button class="btn operator" data-operator="backspace">⌫</button>
+                    <button class="btn operator" data-operator="/">/</button>
+                </div>
+
+                <!-- Second row -->
+                <div class="button-row">
+                    <button class="btn number" data-number="7">7</button>
+                    <button class="btn number" data-number="8">8</button>
+                    <button class="btn number" data-number="9">9</button>
+                    <button class="btn operator" data-operator="*">×</button>
+                </div>
+
+                <!-- Third row -->
+                <div class="button-row">
+                    <button class="btn number" data-number="4">4</button>
+                    <button class="btn number" data-number="5">5</button>
+                    <button class="btn number" data-number="6">6</button>
+                    <button class="btn operator" data-operator="-">−</button>
+                </div>
+
+                <!-- Fourth row -->
+                <div class="button-row">
+                    <button class="btn number" data-number="1">1</button>
+                    <button class="btn number" data-number="2">2</button>
+                    <button class="btn number" data-number="3">3</button>
+                    <button class="btn operator" data-operator="+">+</button>
+                </div>
+
+                <!-- Fifth row -->
+                <div class="button-row">
+                    <button class="btn number" data-number="0">0</button>
+                    <button class="btn number" data-number=".">.</button>
+                    <button class="btn operator" data-operator="negate">±</button>
+                    <button class="btn equals" data-action="equals">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+    "name": "ub-calculator",
+    "version": "1.0.0",
+    "description": "UB Calculator - A full-fledged desktop calculator application",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron .",
+      "build": "electron-builder --win --publish=never",
+      "dist": "electron-builder --publish=never"
+    },
+    "keywords": [
+      "calculator",
+      "electron",
+      "desktop",
+      "UB"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+      "electron": "^27.0.0",
+      "electron-builder": "^24.6.4"
+    },
+    "build": {
+      "appId": "com.ub.calculator",
+      "productName": "UB Calculator",
+      "directories": {
+        "output": "dist"
+      },
+      "files": [
+        "main.js",
+        "renderer.js",
+        "styles.css",
+        "index.html",
+        "assets/**/*"
+      ],
+      "win": {
+        "target": "portable",
+        "icon": "assets/icon.png",
+        "signingHashAlgorithms": null,
+        "signAndEditExecutable": false,
+        "requestedExecutionLevel": "asInvoker",
+        "publisherName": "UB Calculator",
+        "fileAssociations": [
+          {
+            "ext": "ubcalc",
+            "name": "UB Calculator File",
+            "description": "UB Calculator File",
+            "icon": "assets/icon.png"
+          }
+        ]
+      }
+    }
+  }

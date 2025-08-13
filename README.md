@@ -69,7 +69,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/ub-calculator.git
+   git clone https://github.com/uselessbruh/ub-calculator.git
    cd ub-calculator
    ```
 
@@ -218,3 +218,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [⭐ Star this repo](https://github.com/yourusername/ub-calculator) • [🐛 Report Bug](https://github.com/yourusername/ub-calculator/issues) • [💡 Request Feature](https://github.com/yourusername/ub-calculator/issues)
 
 </div>
+
